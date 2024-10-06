@@ -40,7 +40,7 @@ const PrivacyPolicy = () => {
                 If you have any questions about this privacy policy, please contact us at:
             </p>
             <p className="text-gray-700 mb-4">
-                Email: <a href="mailto:atulxgoyal@gmail.com" className="text-blue-500">anaturedelightfoundation@gmail.com</a>
+                Email: <a href="mailto:naturedelightfoundation@gmail.com" className="text-blue-500">naturedelightfoundation@gmail.com</a>
             </p>
         </div>
     );
