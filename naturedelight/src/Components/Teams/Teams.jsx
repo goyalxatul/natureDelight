@@ -61,7 +61,7 @@ const teamData = [
 
 const Teams = () => {
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 bg-white min-h-screen">
       <h1 className="text-3xl font-bold mb-4 text-center">Meet Our Team</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {teamData.map((member, index) => (
