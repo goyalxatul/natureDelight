@@ -7,31 +7,31 @@ const teamData = [
     name: 'Shri Sampat Khaire',
     role: 'Chairman',
     bio: 'Sampat Khaire is Chairman of NDF and planning and managing various activities of NDF',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/sampat.jpg',
   },
   {
     name: 'Chandrashekhar Aranake',
     role: 'Vice Chairman',
     bio: 'Chandrashekhar Aranake is Vice Chairman of NDF and planning and managing various activities of NDF',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/chandrasekhar.jpg',
   },
   {
     name: 'Shri Sanjay Gole',
     role: 'Secretory',
     bio: 'Sanjay Gole is Secretory of NDF and planning and managing various activities of NDF',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/sanjay.jpg',
   },
   {
     name: 'Shri Harishchandra Patil',
     role: 'Vice Secretory',
     bio: 'Harishchandra Patil is Vice Secretory of NDF and planning and managing various activities of NDF and planning sport and cultural activities.',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/Harish.jpg',
   },
   {
     name: 'Somnath Wale',
     role: 'Treasurer',
     bio: 'Somnath Wale is Treasurer of NDF and planning and managing various activities of NDF and keeping financial record of NDF.',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/somnath.jpg',
   },
   {
     name: 'Sau. Vidya Ghorpade',
@@ -49,13 +49,13 @@ const teamData = [
     name: 'Deepak Chandgude',
     role: 'Member',
     bio: 'Deepak Chandgude is Member of NDF and planning and managing various activities of NDF. Supporting for tree plantation activities.',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/Dipak.jpg',
   },
   {
     name: 'Sau. Shabdashri Yelmeli',
     role: 'Member',
     bio: 'Shabdashri Yelmeli is Member of NDF and planning and managing various activities of NDF and supporting for women empowerment activities.',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/yalmalli.jpg',
   }
 ];
 
