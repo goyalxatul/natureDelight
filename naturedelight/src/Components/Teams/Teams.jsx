@@ -37,13 +37,13 @@ const teamData = [
     name: 'Sau. Vidya Ghorpade',
     role: 'Co Treasurer',
     bio: 'Vidya Ghorpade is Co- Treasurer of NDF and planning and managing various activities of NDF and supporting for various financial work.',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/Vidya.jpg',
   },
   {
     name: 'Shri Sadashiv Eksambe',
     role: 'Member',
     bio: 'Sadashiv Eksambe is Member of NDF and planning and managing various activities of NDF and conducting various activities of NDF i.e. Yoga, tree plantation etc.',
-    photo: 'https://via.placeholder.com/100',
+    photo: '/sadashiv.jpg',
   },
   {
     name: 'Deepak Chandgude',
