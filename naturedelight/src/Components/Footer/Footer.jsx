@@ -1,88 +1,92 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import logo from '../../assets/logo.jpg'; 
-import facebookIcon from '../../assets/nav-icon2.svg'; // Import Facebook icon
-import instagramIcon from '../../assets/nav-icon3.svg'; // Import Instagram icon
-
-const sections = [
-    {
-        title: 'Quick Links',
-        items: [
-            { name: 'Maps', link: 'https://maps.google.com/?q=your+location' },
-            { name: 'Team', link: '/team' }, // Change to use the path for the Team page
-            { name: 'Volunteer', link: 'https://docs.google.com/forms/d/e/1FAIpQLSeSA9HbxDfRFnFpg3Jztt1iWlVv4y9MEEKmHGGm8MFdmj_10A/viewform?vc=0&c=0&w=1&flr=0' },
-            { name: 'Blogs', link: '#' },
-        ]
-    },
-    {
-        title: 'Legal',
-        items: [
-            { name: '80G certificate', link: '#' },
-            { name: 'Contact', link: 'mailto:naturedelightfoundation@gmail.com' }, // Updated Contact link
-            { name: 'Privacy Policy', link: '/privacy-policy' }
-        ]
-    },
-];
-
-const items = [
-    { name: 'Facebook', link: 'http://facebook.com', icon: facebookIcon },
-    { name: 'Instagram', link: 'http://instagram.com', icon: instagramIcon },
-];
+import { NavLink } from 'react-router-dom';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaHeart } from 'react-icons/fa';
+import logo from '../../assets/logo.jpg'; // Import the logo image
 
 const Footer = () => {
-    return (
-        <div className="w-full mt-12 text-gray-300 py-6 px-4" style={{ backgroundColor: '#468237' }}>
-            <div className="max-w-[1240px] mx-auto flex flex-col md:flex-row items-start py-4">
-                {/* Logo */}
-                <div className="flex flex-col items-center md:flex-row md:items-start md:mr-6 md:ml-8">
-                    <img src={logo} alt="Logo" className="h-24 md:h-32" />
-                </div>
-
-                {/* Centered Sections */}
-                <div className="flex-grow flex flex-col md:flex-row justify-center items-center md:items-start space-y-6 md:space-y-0 md:space-x-12">
-                    {sections.map((section, index) => (
-                        <div key={index} className="text-center md:text-left">
-                            <h6 className="font-bold uppercase pt-1">
-                                {section.title}
-                            </h6>
-                            <ul className="flex flex-col space-y-1">
-                                {section.items.map((item, i) => (
-                                    <li 
-                                        key={i} 
-                                        className="text-gray-50 hover:text-white cursor-pointer"
-                                    >
-                                        {item.name === 'Team' ? (
-                                            <Link to={item.link}>
-                                                {item.name}
-                                            </Link>
-                                        ) : (
-                                            <a href={item.link} target='_blank' rel='noopener noreferrer'>
-                                                {item.name}
-                                            </a>
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Social icons */}
-            <div className="flex flex-col max-w-[1240px] px-4 py-2 mx-auto justify-between sm:flex-row text-center text-white">
-                <p className="py-2">
-                    &copy; 2024 Nature Delight Foundation 
-                </p>
-                <div className="flex justify-center sm:w-auto pt-2 text-xl space-x-4">
-                    {items.map((x, index) => (
-                        <a key={index} href={x.link} className="hover:text-white cursor-pointer">
-                            <img src={x.icon} alt={x.name} className="w-6 h-6 inline-block"/> 
-                        </a>
-                    ))}
-                </div>
-            </div>
+  return (
+    <footer className="bg-green-800 text-gray-300 py-10 mt-40">
+      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-14 text-sm">
+        
+        {/* About Section */}
+        <div>
+          <h1 className="mb-5 text-2xl font-bold text-white flex items-center gap-2">
+            <FaHeart className="text-white" /> Nature Delight Foundation
+          </h1>
+          <p className="text-gray-300 leading-relaxed">
+            At Nature Delight Foundation, we focus on reforestation, environmental sustainability, and building a better future for our planet.
+          </p>
         </div>
-    );
+
+        {/* Quick Links Section */}
+        <div>
+          <h2 className="text-xl font-bold mb-5 text-white">Quick Links</h2>
+          <ul className="flex flex-col gap-2 text-gray-300">
+            <li>
+              <NavLink to="/" className="hover:text-white transition duration-300">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about/contacts" className="hover:text-white transition duration-300">
+                Contact Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/privacy-policy" className="hover:text-white transition duration-300">
+                Privacy Policy
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/team" className="hover:text-white transition duration-300">
+                Team
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Us Section */}
+        <div>
+          <h2 className="text-xl font-bold mb-5 text-white">Contact Us</h2>
+          <ul className="flex flex-col gap-4 text-gray-300">
+            <li className="flex items-center gap-3">
+              <FaPhone className="text-white" /> 
+              <div>
+                <p className="font-semibold">Call Us</p>
+                <p>+91 8087608729</p>
+              </div>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaEnvelope className="text-white" /> 
+              <div>
+                <p className="font-semibold">Email Us</p>
+                <p>naturedelightfoundation@gmail.com</p>
+              </div>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaMapMarkerAlt className="text-white" /> 
+              <div>
+                <p className="font-semibold">Warje</p>
+                <p>Pune, Maharashtra</p>
+              </div>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaClock className="text-white" /> 
+              <div>
+                <p className="font-semibold">Hours</p>
+                <p>Mon - Sat: 9AM - 7PM</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="mt-10 border-t border-gray-500 pt-5 text-center text-gray-500 text-xs">
+        <p>© 2024 Nature Delight Foundation - All Rights Reserved.</p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

@@ -1,5 +1,6 @@
 // src/Components/Team/Teams.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
 
 // Sample team data
 const teamData = [
@@ -65,7 +66,13 @@ const Teams = () => {
       <h1 className="text-3xl font-bold mb-4 text-center">Meet Our Team</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {teamData.map((member, index) => (
-          <div key={index} className="bg-white p-3 shadow-md rounded-lg flex items-start">
+          <motion.div
+            key={index}
+            className="bg-white p-3 shadow-md rounded-lg flex items-start"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }} // delay for staggered animation
+          >
             <img
               src={member.photo}
               alt={member.name}
@@ -76,7 +83,7 @@ const Teams = () => {
               <p className="text-md text-gray-600">{member.role}</p>
               <p className="mt-1 text-gray-700 text-sm">{member.bio}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
@@ -84,4 +91,3 @@ const Teams = () => {
 };
 
 export default Teams;
-

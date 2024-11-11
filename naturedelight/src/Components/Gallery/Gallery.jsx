@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdArrowForward } from 'react-icons/md'; // Import the arrow icon
+import { motion } from 'framer-motion'; // Import Framer Motion
 
 const Gallery = () => {
   const googleFormURL1 = 'https://photos.google.com/share/AF1QipPr803xwBLc0uTKEqAH89qilodKdwKHR0cSo4EyXefMpwW61vAM9jgZdggIeHLXfA?key=eEphQVRNV2lKWHdnUnFaSzI0VlFhNHRlblg0cURB';
@@ -22,9 +23,20 @@ const Gallery = () => {
     <div className="p-8">
       <h1 className="text-6xl text-center mb-8">Gallery</h1>
       <div className="flex justify-start">
-        <ul className="list-disc list-inside"> 
+        <motion.ul
+          className="list-disc list-inside"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }} // Fade-in animation for the entire list
+        >
           {links.map((link, index) => (
-            <li key={index} className="text-lg my-4 flex items-center">
+            <motion.li
+              key={index}
+              className="text-lg my-4 flex items-center"
+              initial={{ opacity: 0, x: -20 }} // Start from the left
+              animate={{ opacity: 1, x: 0 }} // Animate to the center
+              transition={{ duration: 0.5, delay: index * 0.2 }} // Stagger the animation
+            >
               <span className="mr-2 text-black font-bold">{index + 1}.</span>
               <a 
                 href={link.url} 
@@ -35,15 +47,14 @@ const Gallery = () => {
                 {link.name}
                 <MdArrowForward className="ml-2 text-black" />
               </a>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
     </div>
   );
 };
 
 export default Gallery;
-
 
 
