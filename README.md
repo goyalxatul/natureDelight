@@ -43,10 +43,10 @@ Ensure you have the following installed:
 
 ### Installation
 
- Clone the repository:
+! Clone the repository:
    ```bash
-git clone https://github.com/your-username/naturedelight.git
-cd naturedelight
+   git clone https://github.com/your-username/naturedelight.git
+   cd naturedelight
 
 
 ### Contributors
