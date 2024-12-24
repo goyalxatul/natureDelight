@@ -51,5 +51,4 @@ Ensure you have the following installed:
 
 ### Contributors
 Esha Sangra
-Atul Goyal
 
