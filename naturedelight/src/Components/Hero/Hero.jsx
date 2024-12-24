@@ -107,6 +107,7 @@ function Hero() {
             🌲🌞<span className="text-white">Enhancing Nature's Beauty since 2020.</span>
           </div>
         </div>
+        
         <motion.div
           className="flex-1 relative mt-8 md:mt-0"
           initial={{ opacity: 0, x: 100 }}
