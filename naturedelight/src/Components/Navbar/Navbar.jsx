@@ -7,6 +7,9 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Access backend URL from environment variables for Vite
+  const backendURL = import.meta.env.VITE_BACKEND_URL;
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
@@ -27,7 +30,7 @@ const Navbar = () => {
     const currency = "INR";
     const receiptId = "qwsaq1";
     try {
-      const response = await fetch("http://localhost:5000/order", {
+      const response = await fetch(`${backendURL}/order`, {
         method: "POST",
         body: JSON.stringify({ amount, currency, receipt: receiptId }),
         headers: { "Content-Type": "application/json" },
@@ -50,7 +53,7 @@ const Navbar = () => {
             currency,
             receipt: receiptId,
           };
-          const validateRes = await fetch("http://localhost:5000/order/validate", {
+          const validateRes = await fetch(`${backendURL}/order/validate`, {
             method: "POST",
             body: JSON.stringify(paymentDetails),
             headers: { "Content-Type": "application/json" },
@@ -131,11 +134,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
